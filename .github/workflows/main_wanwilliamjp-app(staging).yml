@@ -31,8 +31,8 @@ jobs:
       - name: dotnet install ef
         run: dotnet tool install -g dotnet-ef
         
-      - name: dotnet bundle migratioin
-        run: dotnet ef migratioin bundle -p DotNetCoreSqlDb/DotNetCoreSqlDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
+      - name: dotnet bundle migration
+        run: dotnet ef migration bundle -p DotNetCoreSqlDb/DotNetCoreSqlDb.csproj -o ${{env.DOTNET_ROOT}}/myapp/migrate
         
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
